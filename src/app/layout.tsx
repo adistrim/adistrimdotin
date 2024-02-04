@@ -1,15 +1,12 @@
 import type { Metadata } from 'next'
-// import { Inter } from 'next/font/google'
-// q: how to import Montserrat
 import { Montserrat } from 'next/font/google'
 import Header from './components/header'
 import './globals.css'
 
-// const inter = Inter({ subsets: ['latin'] })
 const mons = Montserrat({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'adistrim',
+  title: 'Aditya Raj',
   description: `Aditya Raj's personal website`,
 }
 
