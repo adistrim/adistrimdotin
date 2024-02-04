@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import Header from './components/header'
+import Footer from './components/footer'
 import './globals.css'
 
 const mons = Montserrat({ subsets: ['latin'] })
@@ -22,6 +23,7 @@ export default function RootLayout({
           <div className='flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0'>
             <Header />
             {children}
+            <Footer />
           </div>
         </main>
       </body>
