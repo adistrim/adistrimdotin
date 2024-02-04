@@ -8,6 +8,9 @@ export default function Home() {
         Welcome to my personal website – a digital haven where I share my passions without social media algorithms. Explore and enjoy my curated digital living room.
       </p>
       <br />
+      <h1 className='font-bold mt-4 text-xl mb-4 tracking-tighter'>
+        About me? 🤔
+      </h1>
       <p className='prose prose-neutral dark:prose-invert'>
         I'm a 3rd-year BTech Computer Science & Engineering Student, on the journey to becoming a Software Engineer. I have a keen interest in technology and aircrafts. I enjoy capturing moments through photography and delving into the complexities of our world.
       </p>
