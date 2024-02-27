@@ -24,7 +24,7 @@ export default function RootLayout({
       </head>
       <body>
         <main className='font-mons antialiased max-w-2xl mx-4 mt-4 sm:mx-auto'>
-          <div className='flex-auto min-w-0 mt-6 flex flex-col px-2'>
+          <div className='flex-auto min-w-0 mt-6 flex flex-col'>
             <Header />
             {children}
             <Footer />
