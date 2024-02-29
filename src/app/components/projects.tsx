@@ -4,11 +4,11 @@ import projectData from "../data/projects.json";
 export default function Home() {
   return (
     <section className="mt-8">
-      <h1 className="font-medium text-xl mb-4">What I Create</h1>
+      <h1 className="font-medium dark:text-gray-100 text-xl mb-4">What I Create</h1>
       <div className="grid gap-6">
         {projectData.map((project, index) => (
           <div key={index} className="bg-[#FFFBF5] dark:bg-[#191919] shadow-md rounded-lg p-6">
-            <h2 className="font-semibold text-lg mb-2">{project.title}</h2>
+            <h2 className="font-semibold dark:text-gray-100 text-lg mb-2">{project.title}</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
             <div className="flex justify-between items-center">
               <a

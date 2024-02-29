@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import moment from "moment";
-import { Changa } from "next/font/google";
-
-const changa = Changa({ subsets: ["latin"] })
 
 interface Commit {
   sha: string;
@@ -40,7 +37,7 @@ const Changelog: React.FC = () => {
   }, []);
 
   return (
-    <div className={`min-h-screen mb-20 ${changa.className} px-1`}>
+    <div className="min-h-screen mb-20 px-1">
       <h2 className="font-medium text-xl mb-8 tracking-tighter">Changelog</h2>
       {loading ? (
         <p>Loading...</p>

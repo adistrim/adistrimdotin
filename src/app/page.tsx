@@ -1,15 +1,12 @@
 import recommendationsData from "./data/recommendations.json";
 import RecommendationCard from "./components/linkedin";
 import Projects from "./components/projects";
-import { Changa } from "next/font/google";
-
-const changa = Changa({ subsets: ["latin"] })
 
 export default function Home() {
   return (
-    <div className={`${changa.className} min-h-screen`}>
+    <div className="min-h-screen">
       <section>
-        <h1 className="font-medium text-2xl mb-2 tracking-tighter">
+        <h1 className="font-medium dark:text-gray-100 text-2xl mb-2 tracking-tighter">
           Hey, I'm Aditya Raj 👋
         </h1>
         <p className="prose prose-neutral dark:prose-invert text-sm dark:text-gray-300">
@@ -18,7 +15,7 @@ export default function Home() {
           digital living room.
         </p>
         <br />
-        <h1 className="font-medium my-2 text-xl tracking-tighter">
+        <h1 className="font-medium dark:text-gray-100 my-2 text-xl tracking-tighter">
           About me? 🤔
         </h1>
         <p className="prose prose-neutral dark:prose-invert dark:text-gray-300">
@@ -29,7 +26,7 @@ export default function Home() {
       <Projects />
       </div>
       <div className="my-10">
-        <h1 className="font-medium mt-4 text-xl mb-4 tracking-tighter">Recommendations</h1>
+        <h1 className="font-medium dark:text-gray-100 mt-4 text-xl mb-4 tracking-tighter">Recommendations</h1>
         {recommendationsData.map((recommendation: any) => (
           <RecommendationCard
             key={recommendation.id}

@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import Header from './components/header'
 import Footer from './components/footer'
 import './globals.css'
+import React from "react";
+import { Changa } from "next/font/google";
+
+const changa = Changa({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: 'Aditya Raj',
@@ -22,8 +26,8 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>
-        <main className='font-mons antialiased max-w-2xl mx-4 mt-4 sm:mx-auto'>
+      <body className="bg-[#fefbf6] dark:bg-[#111010]">
+        <main className={`${changa.className} antialiasing max-w-2xl mx-4 mt-4 sm:mx-auto`}>
           <div className='flex-auto min-w-0 mt-6 flex flex-col'>
             <Header />
             {children}
