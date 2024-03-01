@@ -10,7 +10,9 @@ const useTheme = () => {
     const [theme, setTheme] = useState(Theme.Light);
 
     const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === Theme.Light ? Theme.Dark : Theme.Light));
+        const newTheme = theme === Theme.Light ? Theme.Dark : Theme.Light;
+        setTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
     };
 
     useEffect(() => {
@@ -25,7 +27,6 @@ const useTheme = () => {
 
     useEffect(() => {
         document.documentElement.className = theme === Theme.Dark ? 'dark' : '';
-        localStorage.setItem('theme', theme);
     }, [theme]);
 
     return { theme, toggleTheme };
