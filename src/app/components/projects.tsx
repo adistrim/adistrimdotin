@@ -1,12 +1,39 @@
-import React from "react";
-import projectData from "../data/projects.json";
+"use client";
+import React, { useState, useEffect } from "react";
+
+interface Project {
+  _id: string;
+  title: string;
+  description: string;
+  link?: string;
+  github: string;
+}
 
 export default function Home() {
+  const [projects, setProjects] = useState<Project[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("/api/projects");
+        if (!response.ok) {
+          throw new Error("Failed to fetch projects");
+        }
+        const data = await response.json();
+        setProjects(data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <section className="mt-8">
       <h1 className="font-medium dark:text-gray-100 text-xl mb-4">What I Create</h1>
       <div className="grid gap-6">
-        {projectData.map((project, index) => (
+        {projects.map((project, index) => (
           <div key={index} className="bg-[#FFFBF5] dark:bg-[#191919] shadow-md rounded-lg p-6">
             <h2 className="font-semibold dark:text-gray-100 text-lg mb-2">{project.title}</h2>
             <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
@@ -29,7 +56,6 @@ export default function Home() {
                   Visit Website
                 </a>
               )}
-
             </div>
           </div>
         ))}
