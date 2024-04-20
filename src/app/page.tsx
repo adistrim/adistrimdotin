@@ -1,5 +1,4 @@
-import recommendationsData from "./data/recommendations.json";
-import RecommendationCard from "./components/linkedin";
+import { Recommendation } from "./components/recommendations";
 import Projects from "./components/projects";
 
 export default function Home() {
@@ -26,13 +25,7 @@ export default function Home() {
       <Projects />
       </div>
       <div className="my-10">
-        <h1 className="font-medium dark:text-gray-100 mt-4 text-xl mb-4 tracking-tighter">Recommendations</h1>
-        {recommendationsData.map((recommendation: any) => (
-          <RecommendationCard
-            key={recommendation.id}
-            recommendation={recommendation}
-          />
-        ))}
+        <Recommendation />
       </div>
     </div>
   );

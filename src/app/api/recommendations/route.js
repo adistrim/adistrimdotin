@@ -12,7 +12,6 @@ export async function GET() {
     try {
         await mongoose.connect(connectionStr);
         data = await Recommendation.find().sort({ _id: -1 });
-        console.log("Retrieved data:", data);
     } catch (e) {
         console.error("Error:", e);
         data = { error: e.message };

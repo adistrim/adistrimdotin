@@ -8,6 +8,5 @@ const recommendationSchema = new mongoose.Schema({
 })
 
 
-export const Recommendation = mongoose.models.recommendation || mongoose.model('recommendation', recommendationSchema);
-
+export const Recommendation = mongoose.models.recommendations || mongoose.model('recommendations', recommendationSchema);
 
