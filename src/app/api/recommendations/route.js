@@ -3,6 +3,7 @@ import { connectionStr } from "../../../utils/db";
 import { NextResponse } from "next/server";
 import { Recommendation } from "../../../models/recommendations";
 
+export const revalidate = 0; // this bypasses the ISR
 
 export async function GET() {
     
