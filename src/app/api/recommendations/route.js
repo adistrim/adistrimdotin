@@ -3,7 +3,7 @@ import { connectionStr } from "../../../utils/db";
 import { NextResponse } from "next/server";
 import { Recommendation } from "../../../models/recommendations";
 
-export const revalidate = 0; // this bypasses the ISR
+export const revalidate = 86400; // 86400 = 24 hours (revalidate every 24 hours)
 
 export async function GET() {
     
