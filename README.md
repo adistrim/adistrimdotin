@@ -10,6 +10,16 @@ This is the source code repository for the personal/portfolio website of Adistri
 
 The changelog section provides a list of all changes and updates made to the website. It includes details about new features, bug fixes, optimizations, and any other modifications.
 
+### Docker Image
+
+```bash
+docker build -t adistrim .      
+```
+
+```bash
+docker run -d -p 3000:3000 adistrim
+```
+
 ## Contributing
 
 Contributions to the website are welcome! If you find any issues, have suggestions for improvements, or would like to add new features, feel free to open an issue or submit a pull request.
