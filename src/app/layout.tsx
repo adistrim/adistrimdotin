@@ -9,7 +9,7 @@ const changa = Changa({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: 'Aditya Raj',
-  description: `I am a 3rd-year BTech Computer Science & Engineering Student at JKLU, Jaipur, and also an associate-alumni of IIT Gandhinagar, on a journey to becoming a Software Engineer. I have a keen interest in aviation and tech.`,
+  description: `I'm a 3rd-year BTech Computer Science & Engineering Student at JKLU, Jaipur, and also an associate-alumni of IIT Gandhinagar, on a journey to becoming a Software Engineer. I have a keen interest in aviation and tech.`,
   keywords:
     "Aditya Raj, aditya raj, aditya, raj, adistrim, Adistrim, ADISTRIM, portfolio, aditya portfolio, adistrim portfolio",
 }
@@ -27,7 +27,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="bg-[#fefbf6] dark:bg-[#111010]">
-        <main className={`${changa.className} antialiasing max-w-2xl mx-4 mt-4 sm:mx-auto`}>
+        <main className={`${changa.className} antialiasing max-w-3xl mx-4 mt-4 sm:mx-auto`}>
           <div className='flex-auto min-w-0 mt-6 flex flex-col'>
             <Header />
             {children}
