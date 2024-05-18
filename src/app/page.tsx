@@ -25,7 +25,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/jklu_logo.png" alt="JKLU Logo" className="h-3.5 w-auto mr-1" /> JKLU, Jaipur
+              <Image src="/jklu_logo.webp" alt="JKLU Logo" width={14} height={14} className="h-3.5 w-auto mr-1" /> JKLU, Jaipur
             </a>
             , and also an associate-alumni of{" "}
             <a
@@ -34,7 +34,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/iit_gandhinagar_logo.png" alt="IITGn Logo" className="h-3.5 w-auto mr-1" /> IIT Gandhinagar
+              <Image src="/iit_gandhinagar_logo.webp" alt="IITGn Logo" width={14} height={14} className="h-3.5 w-auto mr-1" /> IIT Gandhinagar
             </a>
             , on a journey to becoming a Software Engineer. I have a keen interest in{" "}
             <a
@@ -43,21 +43,20 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/aviation_grade_logo.png" alt="AG Logo" className="h-3.5 w-auto mr-1" /> aviation
+              <Image src="/aviation_grade_logo.webp" alt="AG Logo" width={14} height={14} className="h-3.5 w-auto mr-1" /> aviation
             </a>{" "}
             and tech. I always enjoy capturing photos and getting to know how our very complex world works.
           </p>
         </div>
         <div className="flex justify-center">
           <Image
-            src="/my_profile.jpg"
+            src="/my_profile.webp"
             alt="Aditya Raj"
             width={1233}
             height={1541}
             className="rounded-lg object-cover object-center"
           />
         </div>
-
       </section>
       <section className="flex flex-wrap justify-center mt-10">
         <a target="_blank" href="mailto:adistrim.dev@gmail.com" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Email</a>
