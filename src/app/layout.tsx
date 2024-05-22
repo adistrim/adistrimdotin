@@ -4,6 +4,7 @@ import Footer from './components/footer'
 import './globals.css'
 import React from "react";
 import { Changa } from "next/font/google";
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 const changa = Changa({ subsets: ["latin"] })
 
@@ -21,6 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <head>
         <link rel="icon" href="/me.webp" />
         <meta charSet="utf-8" />
