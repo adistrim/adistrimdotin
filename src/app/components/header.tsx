@@ -23,6 +23,13 @@ const Header: React.FC = () => {
                         >
                             home
                         </a>
+                        <a
+                            className={`transition-all hover:bg-neutral-200 dark:hover:bg-gray-800 hover:text-gray-700 dark:text-gray-200 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 rounded-lg ${pathname === '/blog' ? 'bg-neutral-200 dark:bg-gray-800 dark:text-white dark:hover:text-neutral-200' : ''}`}
+                            href="/blog"
+                            aria-current={pathname === '/blog' ? 'page' : undefined}
+                        >
+                            blog
+                        </a>
                     </div>
                     <div>
                         <button

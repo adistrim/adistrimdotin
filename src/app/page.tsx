@@ -68,6 +68,8 @@ export default function Home() {
         <a target="_blank" href="https://linkedin.com/in/adistrim" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">LinkedIn</a>
         <span className="mx-2 dark:text-white">/</span>
         <a target="_blank" href="https://twitter.com/_adistrim_" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Twitter</a>
+        <span className="mx-2 dark:text-white">/</span>
+        <a target="_blank" href="https://adistrim.hashnode.dev/" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Hashnode</a>
       </section>
       <div className="mx-auto my-10">
         <Projects />
