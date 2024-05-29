@@ -1,5 +1,6 @@
+// header.tsx
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Changa } from 'next/font/google';
 import { FiSun, FiMoon } from 'react-icons/fi';
@@ -10,6 +11,11 @@ const changa = Changa({ subsets: ["latin"] });
 const Header: React.FC = () => {
     const pathname = usePathname();
     const { theme, toggleTheme } = useTheme();
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     return (
         <aside className={`mb-10 tracking-tight ${changa.className}`}>
@@ -32,13 +38,15 @@ const Header: React.FC = () => {
                         </a>
                     </div>
                     <div>
-                        <button
-                            className="rounded-full p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-                            onClick={toggleTheme}
-                            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-                        >
-                            {theme === 'dark' ? <FiMoon size={20} aria-hidden="true" /> : <FiSun size={20} aria-hidden="true" />}
-                        </button>
+                        {isMounted && (
+                            <button
+                                className="rounded-full p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                                onClick={toggleTheme}
+                                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                            >
+                                {theme === 'dark' ? <FiMoon size={20} aria-hidden="true" /> : <FiSun size={20} aria-hidden="true" />}
+                            </button>
+                        )}
                     </div>
                 </nav>
             </div>

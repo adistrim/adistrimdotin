@@ -1,24 +1,36 @@
-# Adistrim Portfolio Website
+# [adistrim.me](https://adistrim.me)
 
-This is the source code repository for the personal/portfolio website of Adistrim aka Aditya Raj. The website is built using Next.js, TypeScript, and Tailwind CSS, and it is deployed on Vercel.
+This is the source code of my personal/portfolio website. 
 
-### Deployment URL
+Created with the following tools and frameworks:
 
-[www.adistrim.me](https://adistrim.me)
+1. [Next.js](https://nextjs.org/)
+2. [TypeScript](https://www.typescriptlang.org/)
+3. [Tailwindcss](https://tailwindcss.com/)
+4. [Cloudflare](https://www.cloudflare.com/)
+5. [MongoDB](https://www.mongodb.com/)
+6. [Vercel](https://vercel.com/)
+
+Deployment URL: [www.adistrim.me](https://adistrim.me)
+
+### Recent Update: [Blog Page](https://adistrim.me/blog) [THE COOLEST-SECTION]
+The recent addition to the website is a blog page that fetches blogs from Hashnode using Hashnode's GraphQL API. This feature enables users to access my latest blog posts directly on the website.
 
 ### [Changelog](https://adistrim.me/changelog) [THE SECOND COOLEST-SECTION]
 
 The changelog section provides a list of all changes and updates made to the website. It includes details about new features, bug fixes, optimizations, and any other modifications.
 
-### Docker Image
+## Docker Image
 
 ```bash
 docker build -t adistrim .      
 ```
+_builds the docker image_
 
 ```bash
 docker run -d -p 3000:3000 adistrim
 ```
+_runs the docker container_
 
 ## Contributing
 
