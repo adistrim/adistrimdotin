@@ -1,6 +1,7 @@
 import { Recommendation } from "./components/recommendations";
 import Projects from "./components/projects";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,41 +12,82 @@ export default function Home() {
             Hey, I'm Aditya Raj 👋
           </h1>
           <p className="prose prose-neutral dark:prose-invert text-sm dark:text-gray-300">
-            Welcome to my personal website – a digital space where I share my passions without social media algorithms. Explore and enjoy my digital living room.
+            Welcome to my personal website – a digital space where I share my
+            passions without social media algorithms. Explore and enjoy my
+            digital living room.
           </p>
           <br />
           <h1 className="font-medium dark:text-gray-100 my-2 text-xl tracking-tighter">
             About me? 🤔
           </h1>
           <p className="prose prose-neutral dark:prose-invert dark:text-gray-300">
-            I'm a 3rd-year BTech Computer Science & Engineering Student at{" "}
-            <a
+            I'm a 4th-year BTech Computer Science & Engineering Student at{" "}
+            <Link
               className="border border-neutral-200 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-900 dark:text-neutral-100 no-underline"
               href="https://jklu.edu.in"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src="/jklu_logo.webp" alt="JKLU Logo" width={14} height={14} className="h-3.5 w-auto mr-1" /> JKLU, Jaipur
-            </a>
+              <Image
+                src="/jklu_logo.webp"
+                alt="JKLU Logo"
+                width={14}
+                height={14}
+                className="h-3.5 w-auto mr-1"
+              />{" "}
+              JKLU, Jaipur
+            </Link>
+            , currently spending my final year as a Visiting Student at{" "}
+            <Link
+              className="border border-neutral-200 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-900 dark:text-neutral-100 no-underline"
+              href="https://iitjammu.ac.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/iit_jammu_logo.webp"
+                alt="IIT JMU Logo"
+                width={14}
+                height={14}
+                className="h-3.5 w-auto mr-1"
+              />{" "}
+              IIT Jammu
+            </Link>
             , and also an associate-alumni of{" "}
-            <a
+            <Link
               className="border border-neutral-200 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-900 dark:text-neutral-100 no-underline"
               href="https://www.iitgn.ac.in/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src="/iit_gandhinagar_logo.webp" alt="IITGn Logo" width={14} height={14} className="h-3.5 w-auto mr-1" /> IIT Gandhinagar
-            </a>
-            , on a journey to becoming a Software Engineer. I have a keen interest in{" "}
-            <a
+              <Image
+                src="/iit_gandhinagar_logo.webp"
+                alt="IITGn Logo"
+                width={14}
+                height={14}
+                className="h-3.5 w-auto mr-1"
+              />{" "}
+              IIT Gandhinagar
+            </Link>
+            , on a journey to becoming a Software Engineer. I have a keen
+            interest in{" "}
+            <Link
               className="border border-neutral-200 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800 rounded p-1 text-sm inline-flex items-center leading-4 text-neutral-900 dark:text-neutral-100 no-underline"
               href="https://aviationgrade.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src="/aviation_grade_logo.webp" alt="AG Logo" width={14} height={14} className="h-3.5 w-auto mr-1" /> aviation
-            </a>{" "}
-            and tech. I always enjoy capturing photos and getting to know how our very complex world works.
+              <Image
+                src="/aviation_grade_logo.webp"
+                alt="AG Logo"
+                width={14}
+                height={14}
+                className="h-3.5 w-auto mr-1"
+              />{" "}
+              aviation
+            </Link>{" "}
+            and tech. I always enjoy capturing photos and getting to know how
+            our very complex world works.
           </p>
         </div>
         <div className="flex justify-center">
@@ -59,17 +101,53 @@ export default function Home() {
         </div>
       </section>
       <section className="flex flex-wrap justify-center mt-10">
-        <a target="_blank" href="mailto:adistrim.dev@gmail.com" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Email</a>
+        <Link
+          target="_blank"
+          href="mailto:adistrim.dev@gmail.com"
+          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
+        >
+          Email
+        </Link>
         <span className="mx-2 dark:text-white">/</span>
-        <a target="_blank" href="https://drive.google.com/file/d/13J7ScOq6SqQNAI9AWjuoKRWhZtl1As6I/view" className="mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Resume</a>
+        <Link
+          target="_blank"
+          href="https://drive.google.com/file/d/13J7ScOq6SqQNAI9AWjuoKRWhZtl1As6I/view"
+          className="mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
+        >
+          Resume
+        </Link>
         <span className="mx-2 dark:text-white">/</span>
-        <a target="_blank" href="https://github.com/adistrim" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">GitHub</a>
+        <Link
+          target="_blank"
+          href="https://github.com/adistrim"
+          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
+        >
+          GitHub
+        </Link>
         <span className="mx-2 dark:text-white">/</span>
-        <a target="_blank" href="https://linkedin.com/in/adistrim" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">LinkedIn</a>
+        <Link
+          target="_blank"
+          href="https://linkedin.com/in/adistrim"
+          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
+        >
+          LinkedIn
+        </Link>
         <span className="mx-2 dark:text-white">/</span>
-        <a target="_blank" href="https://twitter.com/_adistrim_" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Twitter</a>
+        <Link
+          target="_blank"
+          href="https://twitter.com/_adistrim_"
+          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
+        >
+          Twitter
+        </Link>
         <span className="mx-2 dark:text-white">/</span>
-        <a target="_blank" href="https://adistrim.hashnode.dev/" className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors">Hashnode</a>
+        <Link
+          target="_blank"
+          href="https://adistrim.hashnode.dev/"
+          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
+        >
+          Hashnode
+        </Link>
       </section>
       <div className="mx-auto my-10">
         <Projects />
