@@ -2,6 +2,7 @@ import { Recommendation } from "./components/recommendations";
 import Projects from "./components/projects";
 import Image from "next/image";
 import Link from "next/link";
+import SocialLinksSection from "./components/SocialLinks";
 
 export default function Home() {
   return (
@@ -100,55 +101,9 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="flex flex-wrap justify-center mt-10">
-        <Link
-          target="_blank"
-          href="mailto:adistrim.dev@gmail.com"
-          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
-        >
-          Email
-        </Link>
-        <span className="mx-2 dark:text-white">/</span>
-        <Link
-          target="_blank"
-          href="https://drive.google.com/file/d/13J7ScOq6SqQNAI9AWjuoKRWhZtl1As6I/view"
-          className="mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
-        >
-          Resume
-        </Link>
-        <span className="mx-2 dark:text-white">/</span>
-        <Link
-          target="_blank"
-          href="https://github.com/adistrim"
-          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
-        >
-          GitHub
-        </Link>
-        <span className="mx-2 dark:text-white">/</span>
-        <Link
-          target="_blank"
-          href="https://linkedin.com/in/adistrim"
-          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
-        >
-          LinkedIn
-        </Link>
-        <span className="mx-2 dark:text-white">/</span>
-        <Link
-          target="_blank"
-          href="https://twitter.com/_adistrim_"
-          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
-        >
-          Twitter
-        </Link>
-        <span className="mx-2 dark:text-white">/</span>
-        <Link
-          target="_blank"
-          href="https://adistrim.hashnode.dev/"
-          className="mx-1 md:mx-2 dark:text-white hover:text-gray-500 dark:hover:text-gray-400 transition-colors"
-        >
-          Hashnode
-        </Link>
-      </section>
+      <div className="mx-auto my-15">
+        <SocialLinksSection />
+      </div>
       <div className="mx-auto my-10">
         <Projects />
       </div>
