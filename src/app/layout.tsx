@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
 import "./globals.css";
 import React from "react";
 import { Changa } from "next/font/google";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { Providers } from "./providers";
+import MainContent from "@/components/MainContent";
 
 const changa = Changa({ subsets: ["latin"] });
 
@@ -42,15 +42,9 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
       </head>
       <body className="bg-[#fefbf6] dark:bg-[#111010]">
-        <main
-          className={`${changa.className} antialiasing max-w-3xl mx-4 mt-4 sm:mx-auto`}
-        >
-          <div className="flex-auto min-w-0 mt-6 flex flex-col">
-            <Header />
-            {children}
-            <Footer />
-          </div>
-        </main>
+        <Providers>
+          <MainContent changa={changa.className}>{children}</MainContent>
+        </Providers>
       </body>
     </html>
   );
