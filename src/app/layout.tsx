@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 import "./globals.css";
 import React from "react";
 import { Changa } from "next/font/google";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const changa = Changa({ subsets: ["latin"] });
 
