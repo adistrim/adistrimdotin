@@ -38,7 +38,7 @@ export default function Home() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-[#FFFBF5] dark:bg-[#191919] shadow-md rounded-lg p-6"
+            className="bg-[#FFFBF5] flex flex-col justify-around dark:bg-[#191919] shadow-md rounded-lg p-6"
           >
             <h2 className="font-semibold dark:text-gray-100 text-lg mb-2">
               {project.title}
