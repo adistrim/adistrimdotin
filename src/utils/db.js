@@ -1,1 +1,0 @@
-export const connectionStr = process.env.mongoUrl;

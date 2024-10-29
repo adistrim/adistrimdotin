@@ -14,10 +14,11 @@ export default function MainContent({
 }) {
   const pathname = usePathname();
   const isAuthRoute = pathname === "/signin" || pathname === "/admin";
+  const isAdminRoute = pathname === "/admin";
 
   return (
-    <main className={`${changa} antialiasing max-w-3xl mx-4 mt-4 sm:mx-auto`}>
-      <div className="flex-auto min-w-0 mt-6 flex flex-col">
+    <main className={`${changa} antialiasing ${!isAdminRoute ? "max-w-3xl mx-4 mt-4 sm:mx-auto" : ""}`}>
+      <div className={`flex-auto min-w-0 flex flex-col ${!isAdminRoute ? "mt-6" : ""}`}>
         {!isAuthRoute && <Header />}
         {children}
         {!isAuthRoute && <Footer />}
