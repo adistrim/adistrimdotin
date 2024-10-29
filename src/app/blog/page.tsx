@@ -2,7 +2,7 @@ import BlogList from "@/components/blogs";
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen container">
+    <div className="min-h-screen">
       <h1 className="text-[2rem] dark:text-gray-200 font-bold mb-8">
         Latest Blogs
       </h1>
