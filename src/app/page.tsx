@@ -1,8 +1,8 @@
-import { Recommendation } from "@/components/recommendations";
-import Projects from "@/components/projects";
+import { Recommendation } from "@/components/sections/recommendations";
+import Projects from "@/components/sections/projects";
 import Image from "next/image";
 import Link from "next/link";
-import SocialLinksSection from "@/components/SocialLinks";
+import SocialLinksSection from "@/components/sections/SocialLinks";
 
 export default function Home() {
   return (

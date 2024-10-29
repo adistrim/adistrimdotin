@@ -2,8 +2,8 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
+import Header from "@/components/layouts/header";
+import Footer from "@/components/layouts/footer";
 
 export default function MainContent({
   children,

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Changa } from "next/font/google";
 import { FiSun, FiMoon } from "react-icons/fi";
-import useTheme from "../hooks/useTheme";
+import useTheme from "../../hooks/useTheme";
 
 const changa = Changa({ subsets: ["latin"] });
 
