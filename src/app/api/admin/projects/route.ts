@@ -1,9 +1,7 @@
 import mongoose from "mongoose";
-import { connectionStr } from "../../../utils/db";
+import { connectionStr } from "../../../../utils/db";
 import { NextResponse } from "next/server";
-import { Project } from "../../../models/projects";
-
-export const revalidate = 86400; // 24 hours
+import { Project } from "../../../../models/projects";
 
 function isError(error: unknown): error is Error {
     return error instanceof Error;

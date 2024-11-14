@@ -215,7 +215,3 @@ const BaseManagement = <T extends { _id: string }>({
 };
 
 export default BaseManagement;
-
-// in this code, where I can call the PATCH method to update the project?
-// You can call the PATCH method in the `handleSubmit` function of the `BaseManagement` component.
-// please show me how to do it.

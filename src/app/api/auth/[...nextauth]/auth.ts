@@ -65,13 +65,11 @@ export const authOptions: NextAuthOptions = {
         token.id = user.id;
         token.role = user.role;
       }
-      console.log("JWT callback, token:", token);
       return token;
     },
     async session({ session, token }: { session: any; token: any }) {
       session.user.id = token.id;
       session.user.role = token.role;
-      console.log("Session callback, session:", session);
       return session;
     },
   },

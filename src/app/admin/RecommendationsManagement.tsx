@@ -129,7 +129,7 @@ const RecommendationItem: React.FC<{
 const RecommendationsManagement = () => (
     <BaseManagement<Recommendation>
         title="Recommendation"
-        apiEndpoint="/api/recommendations"
+        apiEndpoint="/api/admin/recommendations"
         FormComponent={RecommendationForm}
         ItemComponent={RecommendationItem}
         initialFormData={initialRecommendationData}

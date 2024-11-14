@@ -1,16 +1,9 @@
 import React from 'react';
-import { Pencil, Trash2, Link, Github, Plus, Loader2 } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Pencil, Trash2, Link, Github } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import {
-    Dialog,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger,
-} from '@/components/ui/dialog';
 import BaseManagement from './BaseManagement';
 
 interface Project {
@@ -131,12 +124,11 @@ const ProjectItem: React.FC<{
 );
 
 const ProjectsManagement = () => {
-    const [dialogOpen, setDialogOpen] = React.useState(false);
 
     return (
         <BaseManagement<Project>
             title="Project"
-            apiEndpoint="/api/projects"
+            apiEndpoint="/api/admin/projects"
             FormComponent={ProjectForm}
             ItemComponent={ProjectItem}
             initialFormData={initialProjectData}
@@ -145,7 +137,3 @@ const ProjectsManagement = () => {
 };
 
 export default ProjectsManagement;
-
-// in this code, where I can call the PATCH method to update the project?
-// You can call the PATCH method to update the project in the `BaseManagement` component.
-// ok

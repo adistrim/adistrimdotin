@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
-import { connectionStr } from "../../../../utils/db";
+import { connectionStr } from "../../../../../utils/db";
 import { NextResponse } from "next/server";
-import { Project } from "../../../../models/projects";
+import { Recommendation } from "@/models/recommendations";
 
 function isError(error: unknown): error is Error {
     return error instanceof Error;
@@ -17,15 +17,15 @@ export async function DELETE(
 ) {
     try {
         await mongoose.connect(connectionStr);
-        const deletedProject = await Project.findByIdAndDelete(params.id);
-        
+        const deletedProject = await Recommendation.findByIdAndDelete(params.id);
+
         if (!deletedProject) {
             return NextResponse.json(
                 { error: "Project not found" },
                 { status: 404 }
             );
         }
-        
+
         return NextResponse.json({ message: "Project deleted successfully" });
     } catch (error) {
         const message = isError(error) ? error.message : "An unknown error occurred";
@@ -42,20 +42,20 @@ export async function PATCH(
         const data = await request.json();
         const { _id, ...updateData } = data;
 
-        const updatedProject = await Project.findByIdAndUpdate(
+        const updatedRecommendation = await Recommendation.findByIdAndUpdate(
             params.id,
             updateData,
             { new: true }
         );
 
-        if (!updatedProject) {
+        if (!updatedRecommendation) {
             return NextResponse.json(
-                { error: "Project not found" },
+                { error: "Recommendation not found" },
                 { status: 404 }
             );
         }
 
-        return NextResponse.json(updatedProject);
+        return NextResponse.json(updatedRecommendation);
     } catch (error) {
         const message = isError(error) ? error.message : "An unknown error occurred";
         return NextResponse.json({ error: message }, { status: 500 });

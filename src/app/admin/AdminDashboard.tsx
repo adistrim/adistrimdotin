@@ -96,13 +96,11 @@ export default function AdminDashboard({
       router.push("/signin");
     } catch (error) {
       console.error('Logout failed:', error);
-      // You might want to show a toast notification here
     }
   };
 
   const currentSession = session || initialSession;
 
-  // Show loading state
   if (status === "loading") {
     return (
       <div className="flex items-center justify-center min-h-screen">
@@ -111,7 +109,6 @@ export default function AdminDashboard({
     );
   }
 
-  // Check for authentication and authorization
   if (!currentSession?.user?.role || currentSession.user.role !== "admin") {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen">

@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 import { connectionStr } from "../../../../utils/db";
 import { NextResponse } from "next/server";
-import { Recommendation } from "@/models/recommendations";
+import { Recommendation } from "../../../../models/recommendations";
+
+export const revalidate = 86400; // 24 hours
 
 function isError(error: unknown): error is Error {
     return error instanceof Error;
@@ -11,39 +13,38 @@ if (!connectionStr) {
     throw new Error("DATABASE_URL is not defined");
 }
 
-export async function DELETE(
-    request: Request,
-    { params }: { params: { id: string } }
-) {
+export async function GET() {
     try {
         await mongoose.connect(connectionStr);
-        const deletedProject = await Recommendation.findByIdAndDelete(params.id);
-
-        if (!deletedProject) {
-            return NextResponse.json(
-                { error: "Project not found" },
-                { status: 404 }
-            );
-        }
-
-        return NextResponse.json({ message: "Project deleted successfully" });
+        const data = await Recommendation.find().sort({ _id: -1 });
+        return NextResponse.json(data);
     } catch (error) {
         const message = isError(error) ? error.message : "An unknown error occurred";
         return NextResponse.json({ error: message }, { status: 500 });
     }
 }
 
-export async function PATCH(
-    request: Request,
-    { params }: { params: { id: string } }
-) {
+export async function POST(request: Request) {
+    try {
+        await mongoose.connect(connectionStr);
+        const data = await request.json();
+        const { _id, ...recommendationData } = data;
+        const newRecommendation = await Recommendation.create(recommendationData);
+        return NextResponse.json(newRecommendation);
+    } catch (error) {
+        const message = isError(error) ? error.message : "An unknown error occurred";
+        return NextResponse.json({ error: message }, { status: 500 });
+    }
+}
+
+export async function PUT(request: Request) {
     try {
         await mongoose.connect(connectionStr);
         const data = await request.json();
         const { _id, ...updateData } = data;
 
         const updatedRecommendation = await Recommendation.findByIdAndUpdate(
-            params.id,
+            _id,
             updateData,
             { new: true }
         );
@@ -61,3 +62,4 @@ export async function PATCH(
         return NextResponse.json({ error: message }, { status: 500 });
     }
 }
+
