@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
 import { Changa } from "next/font/google";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
-import { Providers } from "./providers";
-import MainContent from "@/components/MainContent";
+import { ThemeProvider } from "@/components/theme-provider";
+import Header from "@/components/layouts/header";
+import Footer from "@/components/layouts/footer";
+import Head from "next/head";
 
 const changa = Changa({ subsets: ["latin"] });
 
@@ -15,18 +16,6 @@ export const metadata: Metadata = {
     "Aditya Raj, aditya raj, aditya, raj, adistrim, Adistrim, ADISTRIM, portfolio, aditya portfolio, adistrim portfolio",
 };
 
-const setInitialTheme = `
-  (function() {
-    const theme = localStorage.getItem('theme');
-    if (theme) {
-      document.documentElement.className = theme;
-    } else {
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.className = prefersDarkMode ? 'dark' : '';
-    }
-  })();
-`;
-
 export default function RootLayout({
   children,
 }: {
@@ -34,17 +23,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <GoogleAnalytics />
-      <head>
+      <Head>
         <link rel="icon" href="/me.webp" />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
-      </head>
-      <body className="bg-[#fefbf6] dark:bg-[#111010]">
-        <Providers>
-          <MainContent changa={changa.className}>{children}</MainContent>
-        </Providers>
+        <meta name="description" content="A digital space where I share my passions without social media algorithms" />
+        <meta property="og:title" content="Aditya Raj" />
+        <meta property="og:description" content="A digital space where I share my passions without social media algorithms" />
+        <meta property="og:image" content="/me.webp" />
+        <meta property="og:url" content="https://adistrim.in" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <body className={`min-h-screen bg-background ${changa.className} max-w-3xl mx-4 mt-4 sm:mx-auto`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

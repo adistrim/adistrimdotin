@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex justify-center">
           <Image
             src="/my_profile.webp"
-            alt="Aditya Raj - Software Engineering Student"
+            alt="Aditya Raj - Software Engineer"
             width={400}
             height={500}
             className="rounded-lg object-cover object-center"
