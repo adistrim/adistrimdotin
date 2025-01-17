@@ -14,7 +14,7 @@ export const siteMetadata: Metadata = {
     icons: {
         icon: "/me.webp",
     },
-    // Open Graph for social sharing
+    metadataBase: new URL("https://adistrim.in"),
     openGraph: {
         type: "website",
         locale: "en_US",
