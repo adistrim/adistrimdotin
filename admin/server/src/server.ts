@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import config from "./config";
 import cors from "cors";
 
@@ -8,7 +8,7 @@ app.use(cors({
     origin: config.dev_origin || config.prod_origin,
 }))
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/", (req, res) => {
     res.send("You're not welcome here :)");
 });
 
