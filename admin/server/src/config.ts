@@ -1,6 +1,11 @@
+import dotnev from "npm:dotenv";
+import process from "node:process";
+
+dotnev.config();
+
 const config = {
-    DATABASE_URL: Deno.env.get("DATABASE_URL"),
-    PORT: parseInt(Deno.env.get("PORT") || "8000"),
+    DATABASE_URL: process.env.DATABASE_URL,
+    PORT: process.env.PORT,
 }
 
 export default config;
