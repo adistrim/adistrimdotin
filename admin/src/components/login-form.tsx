@@ -43,8 +43,12 @@ export function LoginForm({
       } else {
         router.push("/");
       }
-    } catch (err: any) {
-      toast(err.message || "Something went wrong");
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        toast(err.message || "Something went wrong");
+      } else {
+        toast("Something went wrong");
+      }
     }
   }
 
