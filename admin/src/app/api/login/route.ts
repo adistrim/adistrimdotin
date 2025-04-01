@@ -52,5 +52,17 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
   }
 
-  return NextResponse.json({ message: "Login successful" }, { status: 200 });
+  const res = NextResponse.json(
+    { message: "Login successful" },
+    { status: 200 },
+  );
+
+  res.cookies.set("admin", "true", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    maxAge: 60 * 60,
+  });
+
+  return res;
 }
