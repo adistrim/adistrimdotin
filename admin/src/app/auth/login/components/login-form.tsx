@@ -41,7 +41,7 @@ export function LoginForm({
       if (!res.ok) {
         toast(data.error || "Something went wrong");
       } else {
-        router.push("/");
+        router.push("/admin");
       }
     } catch (err: unknown) {
       if (err instanceof Error) {
