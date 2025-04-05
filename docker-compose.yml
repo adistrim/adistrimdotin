@@ -1,0 +1,22 @@
+services:
+  adistrim:
+    build:
+      context: ./adistrimdotin
+      dockerfile: Dockerfile
+    container_name: adistrim-app
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./adistrimdotin/.env
+    restart: unless-stopped
+
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    container_name: admin-app
+    ports:
+      - "3001:3000"
+    env_file:
+      - ./admin/.env
+    restart: unless-stopped
