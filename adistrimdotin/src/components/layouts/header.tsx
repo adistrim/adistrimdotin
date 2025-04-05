@@ -21,7 +21,7 @@ const Header = React.memo(() => {
     font-medium
     transition-colors
     no-underline
-    ${pathname === path ? "bg-neutral-200 dark:bg-gray-900 dark:text-white" : ""}
+    ${pathname === path ? "bg-neutral-200 dark:bg-zinc-800 dark:text-white" : ""}
   `;
 
   return (
