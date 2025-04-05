@@ -11,7 +11,7 @@ export default function Home() {
         <AboutSection />
         <div className="flex justify-center">
           <Image
-            src="/my_profile.webp"
+            src="/my_profile.png"
             alt="Aditya Raj - Software Engineer"
             width={400}
             height={500}
