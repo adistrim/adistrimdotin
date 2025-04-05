@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ModeToggle from "@/components/theme-toggle";
-import { Button } from "../ui/button";
 
 const Header = React.memo(() => {
   const pathname = usePathname();
@@ -16,9 +15,13 @@ const Header = React.memo(() => {
 
   const getLinkClassName = (path: string) => `
     py-1 
-    px-2 
+    px-3 
     rounded-lg
-    ${pathname === path ? "bg-neutral-200 dark:bg-gray-800 dark:text-white dark:hover:text-neutral-200" : ""}
+    text-base
+    font-medium
+    transition-colors
+    no-underline
+    ${pathname === path ? "bg-neutral-200 dark:bg-gray-900 dark:text-white" : ""}
   `;
 
   return (
@@ -29,9 +32,8 @@ const Header = React.memo(() => {
           id="nav"
           aria-label="Main navigation"
         >
-          <div className="flex flex-row space-x-1 pr-10">
-          <Button asChild variant="link" size="default" className={getLinkClassName("/")}>
-            <>
+          <div className="flex flex-row space-x-2 pr-10">
+            <div className="flex space-x-1">
               {navItems.map(({ path, label }) => (
                 <Link
                   key={path}
@@ -42,8 +44,7 @@ const Header = React.memo(() => {
                   {label}
                 </Link>
               ))}
-            </>
-          </Button>
+            </div>
           </div>
           <div>
             <ModeToggle />
