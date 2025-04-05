@@ -1,5 +1,3 @@
-// app/layout.tsx
-
 import React from "react";
 import "./globals.css";
 import { Changa } from "next/font/google";
@@ -17,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`min-h-screen bg-background ${changa.className} max-w-3xl mx-4 mt-4 sm:mx-auto`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           {children}
           <Footer />
