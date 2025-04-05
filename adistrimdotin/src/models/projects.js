@@ -16,6 +16,11 @@ const projectSchema = new mongoose.Schema({
     github: {
         type: String,
         required: false
+    },
+    tags: {
+        type: [String],
+        required: false,
+        default: []
     }
 })
 
