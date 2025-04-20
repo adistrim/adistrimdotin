@@ -1,8 +1,8 @@
-import { Recommendation } from "@/components/sections/recommendations";
-import Projects from "@/components/sections/projects";
 import Image from "next/image";
 import SocialLinksSection from "@/components/sections/SocialLinks";
 import AboutSection from "@/components/sections/AboutSection";
+import Projects from "@/components/sections/Projects/Projects";
+import Recommendations from "@/components/sections/Recommendations/Recommendations";
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto my-10">
-        <Recommendation />
+        <Recommendations />
       </section>
     </main>
   );
