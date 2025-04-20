@@ -34,7 +34,7 @@ const SocialLinksSection: React.FC = () => {
   const links: SocialLinkProps[] = [
     { href: "mailto:adistrim.dev@gmail.com", icon: Mail, label: "Email" },
     {
-      href: "https://drive.google.com/file/d/13J7ScOq6SqQNAI9AWjuoKRWhZtl1As6I/view",
+      href: "/resume",
       icon: FileText,
       label: "Resume",
     },
