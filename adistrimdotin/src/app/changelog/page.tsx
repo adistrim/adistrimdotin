@@ -1,6 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import moment from "moment";
+import { useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 interface Commit {
   sha: string;
@@ -13,13 +13,13 @@ interface Commit {
   };
 }
 
-const Changelog: React.FC = () => {
+const Changelog = () => {
   const [commits, setCommits] = useState<Commit[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("https://api.github.com/repos/adistrim/adistrim.me/commits")
+    fetch("https://api.github.com/repos/adistrim/adistrimdotin/commits")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch commits");
@@ -38,7 +38,9 @@ const Changelog: React.FC = () => {
 
   return (
     <div className="min-h-screen mb-20 px-1">
-      <h2 className="font-medium text-xl dark:text-gray-200 mb-8 tracking-tighter">Changelog</h2>
+      <h2 className="font-medium text-xl dark:text-gray-200 mb-8 tracking-tighter">
+        Changelog
+      </h2>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
@@ -49,9 +51,11 @@ const Changelog: React.FC = () => {
             <li key={commit.sha} className="my-[2rem] dark:text-gray-200">
               <div className="mb-2">
                 <strong>{commit.commit.author.name}</strong> committed on{" "}
-                {moment(commit.commit.author.date).format("MMMM D, YYYY")}:
+                {dayjs(commit.commit.author.date).format("MMMM D, YYYY")}
               </div>
-              <div className="mb-2 dark:text-gray-400">{commit.commit.message}</div>
+              <div className="mb-2 dark:text-gray-400">
+                {commit.commit.message}
+              </div>
               <div>
                 <a
                   href={`https://github.com/adistrim/adistrim.me/commit/${commit.sha}`}
