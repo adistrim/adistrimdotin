@@ -1,22 +1,23 @@
-import React from "react";
 import Link from "next/link";
+
 import {
-  Mail,
-  FileText,
-  GithubIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  Hash,
-} from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaHashnode,
+  FaXTwitter,
+  FaFileLines,
+} from "react-icons/fa6";
+
+import type { IconType } from "react-icons";
 
 interface SocialLinkProps {
   href: string;
-  icon: LucideIcon;
+  icon: IconType;
   label: string;
 }
 
-const SocialLink: React.FC<SocialLinkProps> = ({ href, icon: Icon, label }) => (
+const SocialLink = ({ href, icon: Icon, label }: SocialLinkProps) => (
   <Link
     href={href}
     target="_blank"
@@ -32,24 +33,32 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon: Icon, label }) => (
 
 const SocialLinksSection: React.FC = () => {
   const links: SocialLinkProps[] = [
-    { href: "mailto:adistrim.dev@gmail.com", icon: Mail, label: "Email" },
+    {
+      href: "mailto:araj@adistrim.in",
+      icon: FaEnvelope,
+      label: "Email",
+    },
     {
       href: "/resume",
-      icon: FileText,
+      icon: FaFileLines,
       label: "Resume",
     },
-    { href: "https://github.com/adistrim", icon: GithubIcon, label: "GitHub" },
+    { href: "https://github.com/adistrim", icon: FaGithub, label: "GitHub" },
     {
       href: "https://linkedin.com/in/adistrim",
-      icon: LinkedinIcon,
+      icon: FaLinkedin,
       label: "LinkedIn",
     },
     {
       href: "https://twitter.com/_adistrim_",
-      icon: TwitterIcon,
+      icon: FaXTwitter,
       label: "Twitter",
     },
-    { href: "https://adistrim.hashnode.dev/", icon: Hash, label: "Hashnode" },
+    {
+      href: "https://adistrim.hashnode.dev/",
+      icon: FaHashnode,
+      label: "Hashnode",
+    },
   ];
 
   return (
