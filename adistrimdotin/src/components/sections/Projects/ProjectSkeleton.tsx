@@ -1,4 +1,10 @@
 import { Skeleton } from "@/components/ui/skeleton";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+} from "@/components/ui/card";
 
 export function ProjectSkeleton() {
   return (
@@ -6,32 +12,31 @@ export function ProjectSkeleton() {
       {Array(4)
         .fill(0)
         .map((_, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 dark:border-zinc-700 rounded-xl overflow-hidden flex flex-col h-full"
-          >
-            <div className="p-6 flex flex-col flex-grow">
-              <Skeleton className="h-7 w-3/4 mb-3" />
-              <div className="space-y-2 mb-5">
+          <Card key={index} className="h-full flex flex-col">
+            <CardHeader>
+              <Skeleton className="h-7 w-3/4" />
+            </CardHeader>
+            <CardContent className="flex-grow space-y-4">
+              <div className="space-y-2">
                 <Skeleton className="h-4 w-full" />
                 <Skeleton className="h-4 w-full" />
                 <Skeleton className="h-4 w-3/4" />
               </div>
 
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-2">
                 {Array(3)
                   .fill(0)
                   .map((_, i) => (
-                    <Skeleton key={i} className="h-6 w-16 rounded-md" />
+                    <Skeleton key={i} className="h-6 w-16 rounded-full" />
                   ))}
               </div>
+            </CardContent>
 
-              <div className="flex justify-between pt-2 border-t border-gray-200 dark:border-zinc-700 mt-auto">
-                <Skeleton className="h-5 w-20" />
-                <Skeleton className="h-5 w-24" />
-              </div>
-            </div>
-          </div>
+            <CardFooter className="border-t pt-4 flex justify-between">
+              <Skeleton className="h-5 w-20" />
+              <Skeleton className="h-5 w-24" />
+            </CardFooter>
+          </Card>
         ))}
     </div>
   );
