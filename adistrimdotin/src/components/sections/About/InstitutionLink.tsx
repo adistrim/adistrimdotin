@@ -18,7 +18,7 @@ export const InstitutionLink = ({
     aria-label={`Visit ${name} website`}
     className="no-underline"
   >
-    <Badge variant="outline">
+    <Badge variant="outline" className="px-1.5">
       <Image
         src={logo}
         alt={`${name} Logo`}
