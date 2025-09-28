@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dayjs from "dayjs";
+import { Clock, Calendar } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import BlogSkeleton from "./BlogSkeleton";
 
 interface Blog {
@@ -55,11 +58,17 @@ export default function BlogList() {
   }, []);
 
   if (error) {
-    return <p className="text-red-500">Error: {error}</p>;
+    return (
+      <Alert variant="destructive">
+        <AlertDescription>
+          Error loading blogs: {error}
+        </AlertDescription>
+      </Alert>
+    );
   }
 
   return (
-    <div className="grid grid-cols-1 gap-4">
+    <div className="grid grid-cols-1 gap-6">
       {loading ? (
         <>
           <BlogSkeleton />
@@ -68,36 +77,52 @@ export default function BlogList() {
         </>
       ) : (
         blogs.map((blog) => (
-          <Link href={blog.url} key={blog.url}>
-            <div className="p-4 md:space-x-4 border rounded-lg shadow-md cursor-pointer flex flex-col md:flex-row h-full">
-              <div>
-                <h2 className="text-2xl font-bold mb-1 dark:text-white">
-                  {blog.title}
-                </h2>
-                <h3 className="text-lg text-gray-600 mb-1 dark:text-gray-300">
-                  {blog.subtitle}
-                </h3>
-                <div className="flex items-center text-gray-500 mb-4 dark:text-gray-400">
-                  <span>{dayjs(blog.publishedAt).format("MMMM D, YYYY")}</span>
-                  <span className="mx-2">•</span>
-                  <span>{blog.readTimeInMinutes} min read</span>
+          <Link href={blog.url} key={blog.url} className="block no-underline">
+            <Card className="group hover:shadow-md transition-shadow duration-200 cursor-pointer">
+              <CardContent className="p-6">
+                <div className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-bold mb-2 text-foreground transition-colors">
+                      {blog.title}
+                    </h2>
+                    
+                    {blog.subtitle && (
+                      <p className="text-md font-normal text-foreground mt-0 mb-3">
+                        {blog.subtitle}
+                      </p>
+                    )}
+                    
+                    <div className="flex items-center text-sm text-muted-foreground mb-4 space-x-4">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        <span>{dayjs(blog.publishedAt).format("MMMM D, YYYY")}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        <span>{blog.readTimeInMinutes} min read</span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-muted-foreground leading-relaxed">
+                      {truncateText(blog.brief, 150)}
+                    </p>
+                  </div>
+                  
+                  {blog.coverImage?.url && (
+                    <div className="w-full md:w-64 h-36 md:h-auto md:flex-shrink-0">
+                      <Image
+                        src={blog.coverImage.url}
+                        alt={blog.title}
+                        width={256}
+                        height={144}
+                        className="w-full h-full object-cover rounded-md"
+                        unoptimized
+                      />
+                    </div>
+                  )}
                 </div>
-                <p className="text-gray-700 mb-4 md:mb-0 dark:text-gray-300">
-                  {truncateText(blog.brief, 150)}
-                </p>
-              </div>
-              {blog.coverImage?.url && (
-                <div>
-                  <Image
-                    src={blog.coverImage.url}
-                    alt={blog.title}
-                    width={1000}
-                    height={525}
-                    className="rounded-md"
-                  />
-                </div>
-              )}
-            </div>
+              </CardContent>
+            </Card>
           </Link>
         ))
       )}

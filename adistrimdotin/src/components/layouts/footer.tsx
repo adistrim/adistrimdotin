@@ -1,71 +1,36 @@
-import {
-  FaGithub,
-  FaLinkedin,
-  FaEnvelope,
-  FaHashnode,
-  FaXTwitter,
-} from "react-icons/fa6";
+import { SOCIAL_LINKS } from "@/lib/socialLinks";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="my-[1rem] mx-1 sm:p-0 bg-gray-1000 text-white">
+    <footer className="my-4 mx-1 sm:p-0">
       <div className="flex mb-[15rem] items-center justify-between">
-        <div className="flex items-center space-x-2 sm:space-x-4">
-          <Link
-            href="https://blog.adistrim.in/"
-            className="text-neutral-500 dark:text-gray-300 hover:text-neutral-400 dark:hover:text-gray-200"
-            aria-label="Email"
-          >
-            <FaHashnode size={20} />
-          </Link>
-          <Link
-            href="https://github.com/adistrim"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-500 dark:text-gray-300 hover:text-neutral-400 dark:hover:text-gray-200"
-            aria-label="GitHub"
-          >
-            <FaGithub size={20} />
-          </Link>
-          <Link
-            href="https://linkedin.com/in/adistrim"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-500 dark:text-gray-300 hover:text-neutral-400 dark:hover:text-gray-200"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin size={20} />
-          </Link>
-          <Link
-            href="https://twitter.com/_adistrim_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-500 dark:text-gray-300 hover:text-neutral-400 dark:hover:text-gray-200"
-            aria-label="Twitter"
-          >
-            <FaXTwitter size={20} />
-          </Link>
-          <Link
-            href="mailto:araj@adistrim.in"
-            className="text-neutral-500 dark:text-gray-300 hover:text-neutral-400 dark:hover:text-gray-200"
-            aria-label="Email"
-          >
-            <FaEnvelope size={20} />
-          </Link>
+        <div className="flex items-center space-x-4">
+          {SOCIAL_LINKS.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label={link.label}
+            >
+              <link.icon size={20} />
+            </Link>
+          ))}
         </div>
         <Link
           href="/changelog"
           rel="noopener noreferrer"
-          className="hover:text-gray-400 italic text-gray-500 text-base"
+          className="text-muted-foreground hover:text-foreground transition-colors italic text-base no-underline"
           tabIndex={0}
         >
           Changelog
         </Link>
       </div>
       <div className="flex items-center justify-center mt-4">
-        <p className="text-gray-500 dark:text-gray-300 italic text-base">
-          © 2024 Aditya Raj (adistrim)
+        <p className="text-muted-foreground italic text-base">
+          © {new Date().getFullYear()} Aditya Raj (adistrim)
         </p>
       </div>
     </footer>
