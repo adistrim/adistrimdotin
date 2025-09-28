@@ -4,7 +4,7 @@ import { SOCIAL_LINKS } from "@/lib/socialLinks";
 const SocialLinksSection = () => {
   return (
     <section className="mt-10">
-      <div className="flex flex-wrap gap-8 ml-0.5">
+      <div className="flex flex-wrap justify-center gap-8 ml-0.5">
         {SOCIAL_LINKS.map((link, index) => (
           <Link
             key={index}

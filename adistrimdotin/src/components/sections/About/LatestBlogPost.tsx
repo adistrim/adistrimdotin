@@ -39,7 +39,7 @@ export default function LatestBlogPost() {
 
   if (isLoading) {
     return (
-      <Card className="w-fit">
+      <Card className="w-full h-full">
         <CardContent className="p-4 space-y-3">
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <BookOpen className="h-4 w-4" />
