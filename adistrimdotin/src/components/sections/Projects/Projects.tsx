@@ -5,15 +5,7 @@ import { ProjectSkeleton } from "./ProjectSkeleton";
 import ProjectCard from "./ProjectCard";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
-
-export interface Project {
-  _id: string;
-  title: string;
-  description: string;
-  link?: string;
-  github: string;
-  tags?: string[];
-}
+import { Project } from "@/types/project.type";
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -39,14 +31,12 @@ export default function Projects() {
 
   return (
     <section className="mt-16">
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold tracking-tight mb-3 pb-1 inline-block border-b-2 border-border">
-          Projects - Open Sourced
-        </h2>
-        <p className="text-muted-foreground mt-3">
-          Some of my recent projects.
-        </p>
-      </div>
+      <h2 className="text-2xl font-bold tracking-tight mb-3 pb-1 inline-block border-b-2 border-border">
+        Projects - Open Sourced
+      </h2>
+      <p className="text-muted-foreground mt-3">
+        Some of my recent projects.
+      </p>
 
       {isLoading && <ProjectSkeleton />}
 
