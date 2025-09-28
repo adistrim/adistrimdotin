@@ -1,9 +1,11 @@
+import LatestBlogPost from "./LatestBlogPost";
+import GitHubStats from "./GitHubStats";
 import { InstitutionLink } from "./InstitutionLink";
 
 export default function AboutSection() {
   return (
-    <div className="md:col-span-2 space-y-6">
-      <div>
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div className="md:col-span-3">
         <h1 className="text-3xl font-bold tracking-tight text-foreground mb-3">
           Hey, I'm Aditya 👋
         </h1>
@@ -21,6 +23,11 @@ export default function AboutSection() {
             Outside of work, I&apos;m curious about aviation, photography, and the ways complex systems fit together.
           </div>
         </div>
+      </div>
+      
+      <div className="md:col-span-2 flex flex-col justify-start gap-6">
+        <GitHubStats />
+        <LatestBlogPost />
       </div>
     </div>
   );
