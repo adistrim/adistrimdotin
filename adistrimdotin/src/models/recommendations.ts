@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const recommendationSchema = new mongoose.Schema({
+const recommendation = new mongoose.Schema({
     text: {
         type: String,
         required: true
@@ -20,5 +20,5 @@ const recommendationSchema = new mongoose.Schema({
 })
 
 
-export const Recommendation = mongoose.models.recommendations || mongoose.model('recommendations', recommendationSchema);
+export const Recommendation = mongoose.models.recommendations || mongoose.model('recommendations', recommendation);
 
