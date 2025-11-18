@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { getBlogs } from "@/lib/getBlogs";
-import { CONFIG } from "@/constants";
 
-export const revalidate = CONFIG.revalidate;
+export const revalidate = 86400;
 
 export async function GET() {
   try {

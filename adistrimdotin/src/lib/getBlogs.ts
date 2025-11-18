@@ -30,8 +30,7 @@ export async function getBlogs() {
       "Content-Type": "application/json",
       Authorization: `Bearer ${ENV.hashnodeApiKey}`
     },
-    body: JSON.stringify({ query: GET_ARTICLES_QUERY }),
-    next: { revalidate: CONFIG.revalidate }
+    body: JSON.stringify({ query: GET_ARTICLES_QUERY })
   });
 
   const json = await res.json();
