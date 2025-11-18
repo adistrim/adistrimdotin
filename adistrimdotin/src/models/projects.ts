@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const projectSchema = new mongoose.Schema({
+const project = new mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -25,4 +25,4 @@ const projectSchema = new mongoose.Schema({
 })
 
 
-export const Project = mongoose.models.projects || mongoose.model('projects', projectSchema);
+export const Project = mongoose.models.projects || mongoose.model('projects', project);

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/utils/db";
-import { Project } from "@/schema/projects";
+import { Project } from "@/models/projects";
 
 export const revalidate = 86400; // 86400 = 24 hours (revalidate every 24 hours)
 

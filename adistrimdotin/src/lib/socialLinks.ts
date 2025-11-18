@@ -3,6 +3,7 @@ import {
   FaLinkedin,
   FaEnvelope,
   FaFileLines,
+  FaXTwitter
 } from "react-icons/fa6";
 import type { IconType } from "react-icons";
 
@@ -32,5 +33,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://linkedin.com/in/adistrim",
     icon: FaLinkedin,
     label: "LinkedIn",
+  },
+  {
+    href: "https://x.com/adistrim0",
+    icon: FaXTwitter,
+    label: "X (Twitter)",
   },
 ];
