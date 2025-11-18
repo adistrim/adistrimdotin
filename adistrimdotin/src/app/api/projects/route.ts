@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 import { dbConnect } from "@/utils/db";
-import { Project } from "@/schema/projects";
+import { Project } from "@/models/projects";
+import { CONFIG } from "@/constants";
 
-export const revalidate = 86400; // 86400 = 24 hours (revalidate every 24 hours)
+export const revalidate = CONFIG.revalidate; // 86400 = 24 hours (revalidate every 24 hours)
 
 export async function GET() {
   try {
