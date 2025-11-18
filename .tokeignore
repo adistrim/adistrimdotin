@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Next.js build output
+.next/
+out/
+
+# Environment and config
+.env
+.env.*
+.vercel/
+
+# Test output and coverage
+coverage/
+jest-cache/
+jest-temp/
+
+# Logs
+*.log
+
+# OS and editor artifacts
+.DS_Store
+.vscode/
+.idea/
