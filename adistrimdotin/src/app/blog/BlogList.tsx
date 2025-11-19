@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import { Clock, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { getBlogs } from "@/lib/getBlogs";
+import { getBlogs } from "@/lib/blogs";
 
 const truncateText = (text: string, maxLength: number) => {
   return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
