@@ -1,8 +1,7 @@
+"use client";
 import { FaRegMoon } from "react-icons/fa";
 import { FiSun } from "react-icons/fi";
-
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button";
 
 export default function ModeToggle() {

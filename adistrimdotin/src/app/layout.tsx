@@ -2,7 +2,7 @@ import React from "react";
 import "./globals.css";
 import { Changa } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import Header from "@/components/layouts/header";
+import Header from "@/components/layouts/Header/Header";
 import Footer from "@/components/layouts/footer";
 import { siteMetadata } from "./metadata";
 import Script from "next/script";
