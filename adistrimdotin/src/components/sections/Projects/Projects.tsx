@@ -19,7 +19,7 @@ export default async function Projects() {
   return (
     <section className="mt-16">
       <h2 className="text-2xl font-bold tracking-tight mb-3 pb-1 inline-block border-b-2 border-border">
-        Projects. Open Sourced
+        Projects - Open Sourced
       </h2>
       <p className="text-muted-foreground mt-3">
         Some of my recent projects.
