@@ -1,18 +1,11 @@
-import { getBlogs } from "@/lib/getBlogs";
 import Link from "next/link";
 import { BookOpen, Clock, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { getLatestBlogPost } from "@/lib/blogs";
 
 export default async function LatestBlogPost() {
-  let post;
-
-  try {
-    const blogs = await getBlogs();
-    post = blogs?.[0];
-  } catch {
-    post = null;
-  }
+  const post = await getLatestBlogPost();
 
   if (!post) {
     return (

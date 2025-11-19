@@ -1,20 +1,10 @@
-import { dbConnect } from "@/utils/db";
-import { Project } from "@/models/projects";
 import ProjectCard from "./ProjectCard";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { FaExternalLinkAlt } from "react-icons/fa";
-
-export const revalidate = 86400;
+import { getProjects } from "@/lib/projects";
 
 export default async function Projects() {
-  let projects;
-
-  try {
-    await dbConnect();
-    projects = await Project.find().sort({ _id: -1 });
-  } catch {
-    projects = null;
-  }
+  const projects = await getProjects();
 
   return (
     <section className="mt-16">
