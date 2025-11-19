@@ -4,6 +4,8 @@ import ProjectCard from "./ProjectCard";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
+export const revalidate = 86400;
+
 export default async function Projects() {
   let projects;
 
