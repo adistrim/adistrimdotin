@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "@/lib/socialLinks";
+import { SOCIAL_LINKS } from "@/lib/links";
 import Link from "next/link";
 
 const Footer = () => {

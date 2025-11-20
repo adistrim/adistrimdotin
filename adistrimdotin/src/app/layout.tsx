@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactNode } from "react";
 import "./globals.css";
 import { Changa } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -13,7 +13,7 @@ const changa = Changa({ subsets: ["latin"] });
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>

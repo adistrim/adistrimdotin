@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SOCIAL_LINKS } from "@/lib/socialLinks";
+import { SOCIAL_LINKS } from "@/lib/links";
 
 const SocialLinksSection = () => {
   return (
