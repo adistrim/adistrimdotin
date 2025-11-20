@@ -1,6 +1,7 @@
+import { ENV } from "@/config";
 import mongoose from "mongoose";
 
-const connectionStr: string = process.env.MONGODB_URI!;
+const connectionStr: string = ENV.databaseUrl || "";
 if (!connectionStr) {
   throw new Error("Please define the MONGODB_URI environment variable in your environment config.");
 }

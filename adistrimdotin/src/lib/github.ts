@@ -4,8 +4,7 @@ import { Commit } from "@/types/github.type";
 export async function fetchCommits(): Promise<Commit[] | null> {
   try {
     const res = await fetch(GITHUB.commitsApi, {
-      headers: { "User-Agent": "adistrim-site" },
-      next: { revalidate: 86400 }
+      headers: { "User-Agent": "adistrim-site" }
     });
 
     if (!res.ok) return null;
