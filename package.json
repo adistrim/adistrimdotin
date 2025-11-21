@@ -10,8 +10,6 @@
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
-    "@tailwindcss/postcss": "^4.1.17",
-    "autoprefixer": "^10.4.22",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.19",
@@ -26,6 +24,8 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "24.10.1",
     "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3",
