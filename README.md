@@ -1,36 +1,44 @@
-# [adistrim.in](https://adistrim.in)
+# adistrimdotin
 
 This is the source code of my personal/portfolio website.
 
 Created with the following tools and frameworks:
 
-1. [Next.js](https://nextjs.org/)
-2. [TypeScript](https://www.typescriptlang.org/)
-3. [Tailwindcss](https://tailwindcss.com/)
-4. [Cloudflare](https://www.cloudflare.com/)
-5. [MongoDB](https://www.mongodb.com/)
-6. [Vercel](https://vercel.com/)
+1. [Bun](https://bun.com/) - JavaScript Runtime
+2. [Next.js](https://nextjs.org/) - React Framework
+3. [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
+4. [Tailwindcss](https://tailwindcss.com/) - CSS Framework
+5. [Shadcn](https://ui.shadcn.com/) - UI Components
+6. [Cloudflare](https://www.cloudflare.com/) - DNS
+7. [MongoDB](https://www.mongodb.com/) - Database
+8. [Vercel](https://vercel.com/) - Prod
 
-Deployment URL: [www.adistrim.in](https://adistrim.in)
+Deployment URL: [adistrim.in](https://adistrim.in)
 
-### Recent Update: [Blog Page](https://adistrim.in/blog) [THE COOLEST-SECTION]
-The recent addition to the website is a blog page that fetches blogs from Hashnode using Hashnode's GraphQL API. This feature enables users to access my latest blog posts directly on the website.
+## Getting Started
+To run this project locally, follow these steps:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/adistrim/adistrimdotin
+   cd adistrimdotin
+    ```
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+3. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+    Update the `.env` file with your configuration.
+4. Run the development server:
+    ```bash
+    bun run dev
+    ```
+    
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
 
-### [Changelog](https://adistrim.in/changelog) [THE SECOND COOLEST-SECTION]
-
-The changelog section provides a list of all changes and updates made to the website. It includes details about new features, bug fixes, optimizations, and any other modifications.
-
-## Docker Image
-
-```bash
-docker build -t adistrim .
-```
-_builds the docker image_
-
-```bash
-docker run -d -p 3000:3000 adistrim
-```
-_runs the docker container_
+More scripts are available in the `package.json` file.
 
 ## Contributing
 
