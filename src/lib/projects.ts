@@ -1,8 +1,6 @@
 import { Project } from "@/models/projects";
 import { dbConnect } from "@/utils/db";
 
-export const revalidate = 86400;
-
 export async function getProjects() {
   try {
     await dbConnect();

@@ -44,7 +44,7 @@ export async function getBlogs(count: number = CONFIG.blogPostsCount) {
 
 export async function getLatestBlogPost() {
   try {
-    const blog = await getBlogs(1);
+    const blog = await getBlogs();
     return blog[0] || null;
   } catch {
     return null;

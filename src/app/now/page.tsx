@@ -3,6 +3,8 @@ import type { ContactItem } from "@/models/now";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
+export const revalidate = 86400;
+
 export default async function NowPage() {
     const data = await getNow();
 
